@@ -1,7 +1,7 @@
-package javaPractice.Daili.jdongtaizhende;
+package javaPractice.Daili.jdongtaizhende.jdkdongtaidaili;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
+import javaPractice.Daili.jdongtaizhende.cglibdongtaidaili.CglibDyamicProxy;
+import javaPractice.Daili.jdongtaizhende.cglibdongtaidaili.Student;
 
 /**
  * 测试动态
@@ -56,12 +56,11 @@ public class DongtaiTest {
         JDKDyamicProxy proxy = new JDKDyamicProxy(ticket);
         Ticket planeProxyJDK = (Ticket)proxy.getProxy();
         planeProxyJDK.sellTicket("大黄");
+        System.out.println();
 
-       /* System.out.println("-----------CGLibProxy-------------");
-        Ticket ticket1 = new Railway();
-        Ticket railCGLIBproxy = (Ticket)new CglibDyamicProxy().createProxyObject(ticket1);
-        railCGLIBproxy.sellTicket("bubblebee");*/
-
-
+        System.out.println("-----------CGLibProxy-------------");
+        Student student = new Student();
+        Student railCGLIBproxy = (Student)new CglibDyamicProxy().createProxyObject(student);
+        railCGLIBproxy.method1("bubblebeeCGLib");
     }
 }

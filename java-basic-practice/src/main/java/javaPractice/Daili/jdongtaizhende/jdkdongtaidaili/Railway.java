@@ -1,4 +1,4 @@
-package javaPractice.Daili.jdongtaizhende;
+package javaPractice.Daili.jdongtaizhende.jdkdongtaidaili;
 
 /**
  * 铁路部卖火车票

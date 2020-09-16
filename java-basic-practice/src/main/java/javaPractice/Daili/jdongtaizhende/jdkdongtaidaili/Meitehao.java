@@ -1,4 +1,4 @@
-package javaPractice.Daili.jdongtaizhende;
+package javaPractice.Daili.jdongtaizhende.jdkdongtaidaili;
 
 public class Meitehao implements Drink {
     @Override
