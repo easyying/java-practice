@@ -1,5 +1,5 @@
 package javaPractice.reflection.reflect;
-import javaPractice.reflection.ceshiyongli.Bird;
+import javaPractice.reflection.test.Bird;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -29,35 +29,66 @@ public class Reflection {
          */
         //方法一：
         Class s1 = b.getClass();
-        //方法二：
-        String name1 =  "java.util.Random";
-        Class s2 =  Class.forName(name1);
-        //方法三：
+        System.out.println("b.getClass():" + b.getClass());
+        //方法二："java.util.Random";如果类名保存在字符串中，且只有在类型是类或者接口才能使用！！;这个要捕获异常
+        String classname1 = "javaPractice.reflection.test.Bird";
+        Class s2 =  Class.forName(classname1);
+        System.out.println("Class.forName(classname1):"+ Class.forName(classname1));
+
+        Bird bird1 = new Bird();
+       // Class.forName(bird1);不行的 必须是字符串
+        //方法三：int.class是class类型的对象，class类型的对象表示的是一种类型，但是这里这个类型未必是一种类！！！比如int.class
         Class s3 =  Bird.class;
+        Class s31 = int.class;
+        System.out.println("Bird.class ： "+ s3);
+        System.out.println("int.class ： "+ s31);
+
         Class clazz = Bird.class;
+
+
+
+
 
         /**
          * 从Class中获取信息
-         * 构造器
+         * 构造器   getDeclaredConstructors()：所有的    getConstructors():只是public
          * 变量
-         * 方法
+         * 方法  getDeclaredMethods();  getMethods();
          * 对应类的注解
          * 对应类的全部内部类
          *
          */
-        //获取该class对象所对应的类的全部构造器
+        //获取该class对象所对应的类的全部构造器 getDeclaredConstructors()
         Constructor[] constructors = clazz.getDeclaredConstructors();
-        System.out.println("反射获得的构造器，如下：");
+        System.out.println("反射获得的构造器getDeclaredConstructors()，如下：");
         for(Constructor c :  constructors){
             System.out.println(c);
         }
         System.out.println();
+
+        //获取该class对象所对应的类的全部构造器 getConstructors
+        Constructor[] constructors1 = clazz.getConstructors();
+        System.out.println("反射获得的构造器getConstructors，如下：");
+        for(Constructor c :  constructors1){
+            System.out.println(c);
+        }
+        System.out.println();
+
+
         // 获取该Class对象所对应类的全部public方法(不包括构造方法，包括从父类继承的)
-        Method[] methods = clazz.getMethods();
-        System.out.println("反射获得的全部public方法，如下：");
+        Method[] methods = clazz.getDeclaredMethods();
+        System.out.println("反射获得的全部public，private ptotected方法，如下：");
         for(Method m1 :  methods){
             System.out.println(m1);
         }
+        // 获取该Class对象所对应类的全部public方法(不包括构造方法，包括从父类继承的)
+        Method[] methods1 = clazz.getMethods();
+        System.out.println("反射获得的全部public方法，如下：");
+        for(Method m1 :  methods1){
+            System.out.println(m1);
+        }
+
+
         //获取该Class对象对应类的指定方法
         Method method = clazz.getMethod("info",String.class);
         System.out.println("获取该Class对象对应类的指定方法："+ method);
@@ -79,8 +110,11 @@ public class Reflection {
         Bird b1 = b.getClass().newInstance();//newInstance调用该类对象的默认构造器，如果Bird没有默认构造器将抛出异常（返回b所属类的一个新的实例）
         System.out.println("b == b1:"+ (b == b1));
         System.out.println();
-        //1. b. 利用类对象.newInstance()创建对象  （IOC的实现：spring的配置文件    利用反射读取xml文件生成对象）:此时用 forName  然后用newInstance()
 
+        //创建一个和b具有相同类类型的实例
+        System.out.println("b.getClass().newInstance(): "+ b.getClass().newInstance());
+        System.out.println("Class.forName(classname1).newInstance() :"+ Class.forName(classname1).newInstance());
+        //1. b. 利用类对象.newInstance()创建对象  （IOC的实现：spring的配置文件    利用反射读取xml文件生成对象）:此时用 forName  然后用newInstance()
 
 
         //2. 利用Constructor对象创建Java对象
@@ -96,6 +130,9 @@ public class Reflection {
 
 
         System.out.println();
+
+
+
         /**
          * 比较两个Class类对象
          */

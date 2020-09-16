@@ -1,4 +1,4 @@
-package javaPractice.reflection.ceshiyongli;
+package javaPractice.reflection.test;
 
 public class SubBird extends Bird {
 
