@@ -8,6 +8,13 @@
     <artifactId>java-basic</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+    </parent>
+
+
     <!-- 2. 设置项目编码编码   spring版本  mybatis版本  spring和mybatis结合  spring和spring mvc结合 -->
     <properties>
         <!-- Plugin的属性定义 -->
@@ -36,12 +43,26 @@
     <dependencies>
 
         <!--junit 单元测试依赖  3.0的junit是使用编程的方式来进行测试，而junit4是使用注解的方式来运行junit-->
-        <dependency>
+       <!-- <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.2</version>
-            <!-- 表示开发的时候引入，发布的时候不会加载此包，指定范围，在测试时才会加载 -->
+            &lt;!&ndash; 表示开发的时候引入，发布的时候不会加载此包，指定范围，在测试时才会加载 &ndash;&gt;
             <scope>test</scope>
+        </dependency>
+-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
         <!--a.日志 java日志有:slf4j,log4j,logback,common-logging
