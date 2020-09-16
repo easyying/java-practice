@@ -1,4 +1,4 @@
-package javaPractice.Daili.jdongtaizhende.jdkdongtaidaili;
+package javaPractice.proxy.jdongtaizhende.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

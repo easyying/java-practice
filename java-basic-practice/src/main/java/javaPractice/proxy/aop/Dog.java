@@ -1,4 +1,4 @@
-package javaPractice.Daili.aop;
+package javaPractice.proxy.aop;
 
 public interface Dog {
     void info();

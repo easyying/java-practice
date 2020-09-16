@@ -1,4 +1,4 @@
-package javaPractice.Daili.jingtaiDaili;
+package javaPractice.proxy.jingtaiproxy;
 
 public class Test {
     public static void main(String[] args) {

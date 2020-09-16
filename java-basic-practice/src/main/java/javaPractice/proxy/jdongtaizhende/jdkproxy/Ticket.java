@@ -1,4 +1,4 @@
-package javaPractice.Daili.jingtaiDaili;
+package javaPractice.proxy.jdongtaizhende.jdkproxy;
 
 /**
  * 卖票

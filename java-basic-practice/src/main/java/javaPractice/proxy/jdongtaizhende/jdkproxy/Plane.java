@@ -1,4 +1,6 @@
-package javaPractice.Daili.jingtaiDaili;
+package javaPractice.proxy.jdongtaizhende.jdkproxy;
+
+
 
 public class Plane implements Ticket {
     @Override

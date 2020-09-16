@@ -1,4 +1,4 @@
-package javaPractice.Daili.jdongtaizhende.cglibdongtaidaili;
+package javaPractice.proxy.jdongtaizhende.cglibproxy;
 
 
 import org.springframework.cglib.proxy.Enhancer;

@@ -1,4 +1,4 @@
-package javaPractice.Daili.jdongtaizhende.cglibdongtaidaili;
+package javaPractice.proxy.jdongtaizhende.cglibproxy;
 
 /**
  * 没有实现接口的类

@@ -1,4 +1,4 @@
-package javaPractice.Daili.jingtaiDaili;
+package javaPractice.proxy.jingtaiproxy;
 
 /**
  * 铁路部卖火车票

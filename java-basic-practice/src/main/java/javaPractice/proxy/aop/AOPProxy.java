@@ -1,4 +1,4 @@
-package javaPractice.Daili.aop;
+package javaPractice.proxy.aop;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

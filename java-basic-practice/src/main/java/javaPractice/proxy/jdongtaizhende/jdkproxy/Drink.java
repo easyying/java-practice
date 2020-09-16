@@ -1,4 +1,4 @@
-package javaPractice.Daili.jdongtaizhende.jdkdongtaidaili;
+package javaPractice.proxy.jdongtaizhende.jdkproxy;
 
 /**
  * 卖饮品

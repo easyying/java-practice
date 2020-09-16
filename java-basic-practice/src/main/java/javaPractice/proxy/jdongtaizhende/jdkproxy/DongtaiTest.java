@@ -1,7 +1,7 @@
-package javaPractice.Daili.jdongtaizhende.jdkdongtaidaili;
+package javaPractice.proxy.jdongtaizhende.jdkproxy;
 
-import javaPractice.Daili.jdongtaizhende.cglibdongtaidaili.CglibDyamicProxy;
-import javaPractice.Daili.jdongtaizhende.cglibdongtaidaili.Student;
+import javaPractice.proxy.jdongtaizhende.cglibproxy.CglibDyamicProxy;
+import javaPractice.proxy.jdongtaizhende.cglibproxy.Student;
 
 /**
  * 测试动态

@@ -1,4 +1,4 @@
-package javaPractice.Daili.jingtaiDaili;
+package javaPractice.proxy.jingtaiproxy;
 
 /**
  * 代理类：卖火车票
