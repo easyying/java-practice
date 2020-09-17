@@ -1,4 +1,4 @@
-package javaPractice.Gouzaohanshu;
+package javaPractice.construct;
 
 public class SubDuck extends Duck {
 

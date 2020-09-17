@@ -4,7 +4,7 @@ package javaPractice.thread.create;
  * 实现了接口
  * 方法二：新创建的线程实现Runnable接口，实现接口中的抽象run方法 override
  */
-public class ThreadB implements Runnable {
+public class ThreadBRunnable implements Runnable {
 
     @Override
     public void run() {

@@ -1,25 +1,22 @@
 package javaPractice.thread.create;
 
 import javaPractice.Statica.A;
-import javaPractice.thread.interrupt.InterruptThread;
+import javaPractice.thread.create.scheduler.ThreadFRunnable;
 import javaPractice.thread.safe.lock.Count;
-
-import java.util.concurrent.*;
 
 public class ThreadTest {
     private static  int POOL_NUM =10;//线程数量
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {//main是主线程 有java虚拟机启动
+
         A a =new A();
         /**
          * 线程的实现方法：四种
          */
         //方法一：继承父类，覆盖方法run()
-        ThreadA threadA = new ThreadA();//本身又是线程，又是任务！
+      /*  ThreadA threadA = new ThreadA();//本身又是线程，又是任务！
         threadA.start();//启动！线程A
-        System.out.println("这就是主线程mainA");
-
-
+        System.out.println("这就是主线程main中的线程A");
 
         final Count count = new Count();
         for(int i = 0 ;i < 2 ;i++){
@@ -30,15 +27,14 @@ public class ThreadTest {
                 }
             }.start();
 
-        }
+        }*/
 
 
        //方法二：实现接口Runnable，实现抽象方法run()
-        ThreadB threadB = new ThreadB();//类似于一个任务！！！
-        Thread thread = new Thread(threadB);//将任务放入线程
-        thread.start();//启动！线程B
-
-        System.out.println("这就是主线程mainB");
+       /* ThreadBRunnable threadBRunnable = new ThreadBRunnable();//类似于一个任务！！！建立一个任务对象
+        Thread threadb = new Thread(threadBRunnable);//将任务对象传给线程，【告诉】线程将哪个方法放在线程执行空间上运行-Runnable的run（）此时还没放！！！  ;没有start之前，他只是一个线程实例，该Thread的状态：”不可执行状态（新建立的状态）“，并不是真正的线程
+        threadb.start();//启动！线程B  只有线程启动，才会将Runnable的run()放到线程新的执行空间去 是线程的执行空间上的第一个方法
+        System.out.println("这就是主线程main中的线程B");*/
 
 
         //方法三：实现接口Callable，实现方法call()
@@ -54,7 +50,7 @@ public class ThreadTest {
         }catch (ExecutionException e){
             e.printStackTrace();
         }
-        System.out.println("这就是主线程mainC:end!");*/
+        System.out.println("这就是主线程main中的线程C:end!");*/
 
 
 
@@ -80,10 +76,10 @@ public class ThreadTest {
 
 
         //新建几个线程体会线程的属性
-      /* ThreadB threadB = new ThreadB();
+      /* ThreadBRunnable threadBRunnable = new ThreadBRunnable();
         for (int i = 0; i < 2; i++) {
-            //new Thread(threadB,"线程:("+i+")").run();
-            new Thread(threadB,"线程:("+i+")").start();
+            //new Thread(threadBRunnable,"线程:("+i+")").run();
+            new Thread(threadBRunnable,"线程:("+i+")").start();
         }
         System.out.println("哈哈");
         System.out.println("返回当前线程组活动的线程数目"+Thread.activeCount());
@@ -105,9 +101,9 @@ public class ThreadTest {
          * 线程的属性
          */
         
-        /*ThreadB threadB = new ThreadB();
+        /*ThreadBRunnable threadBRunnable = new ThreadBRunnable();
         for (int i = 0; i < 5; i++) {
-            new Thread(threadB,"线程名称：（"+ i+")").start();
+            new Thread(threadBRunnable,"线程名称：（"+ i+")").start();
         }
         Thread curThread = Thread.currentThread();
         String curName =  curThread.getName();
@@ -138,6 +134,25 @@ public class ThreadTest {
     }catch (InterruptedException e){
             e.printStackTrace();
         }*/
+
+        /**
+         * 验证java虚拟机的调度器有不可预测的范围
+         * 如果不加sleep：
+         * 结果：有可能先去执行主线程 或者先执行自己的线程
+         *
+         * 加了sleep():
+         * 如果自己的线程加了sleep 2s 正常情况先走main 但是万一操作系统在这两s内正好去做别的事情 这样2s过后 不一定先执行main还是自己的线程
+         *
+         */
+        ThreadFRunnable threadFRunnable  = new ThreadFRunnable();
+        Thread threadF = new Thread(threadFRunnable);
+        threadF.start();
+
+        System.out.println("back in main");
+
+        /**
+         *  给线程取名字 从而看出哪个线程先执行 哪个后执行
+         */
 
     }
 }

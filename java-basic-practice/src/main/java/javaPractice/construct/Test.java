@@ -1,4 +1,4 @@
-package javaPractice.Gouzaohanshu;
+package javaPractice.construct;
 
 public class Test {
     Duck duck = new Duck();//不知道对象大小的时候，使用默认值
