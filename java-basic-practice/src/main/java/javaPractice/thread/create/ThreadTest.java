@@ -2,6 +2,7 @@ package javaPractice.thread.create;
 
 import javaPractice.Statica.A;
 import javaPractice.thread.create.scheduler.ThreadFRunnable;
+import javaPractice.thread.create.scheduler.ThreadShunxuRunnable;
 import javaPractice.thread.safe.lock.Count;
 
 public class ThreadTest {
@@ -144,15 +145,22 @@ public class ThreadTest {
          * 如果自己的线程加了sleep 2s 正常情况先走main 但是万一操作系统在这两s内正好去做别的事情 这样2s过后 不一定先执行main还是自己的线程
          *
          */
-        ThreadFRunnable threadFRunnable  = new ThreadFRunnable();
+     /*   ThreadFRunnable threadFRunnable  = new ThreadFRunnable();
         Thread threadF = new Thread(threadFRunnable);
         threadF.start();
 
-        System.out.println("back in main");
+        System.out.println("back in main");*/
 
         /**
          *  给线程取名字 从而看出哪个线程先执行 哪个后执行
          */
+        ThreadShunxuRunnable runnable = new ThreadShunxuRunnable();
+        Thread alpha = new Thread(runnable);//如果没有setName的话 Thread-0 Thread-1
+        Thread beta = new Thread(runnable);
+        alpha.setName("alpha");//给线程取名字
+        beta.setName("beta");
+        alpha.start();
+        beta.start();
 
     }
 }
