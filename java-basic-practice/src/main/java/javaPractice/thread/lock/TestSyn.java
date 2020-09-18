@@ -12,7 +12,7 @@ public class TestSyn {
         thread2.start();*/
 
         /**
-         * 两人提款
+         * 两人提款：修改数据问题
          */
         RyanAndMonicaJob theJob = new RyanAndMonicaJob();
         Thread one = new Thread(theJob);//创建2个任务相同的线程，意味着会操作同一个账户
@@ -21,5 +21,10 @@ public class TestSyn {
         two.setName("Monica");
         one.start();
         two.start();
+
+        /**
+         * 更新丢失
+         */
+
     }
 }
