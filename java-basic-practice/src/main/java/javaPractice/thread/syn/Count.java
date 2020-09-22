@@ -1,6 +1,4 @@
-package javaPractice.thread.lock;
-
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+package javaPractice.thread.syn;
 
 /**
  * 测试线程安全不安去

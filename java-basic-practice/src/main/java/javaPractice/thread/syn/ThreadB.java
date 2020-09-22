@@ -1,4 +1,4 @@
-package javaPractice.thread.lock;
+package javaPractice.thread.syn;
 
 public class ThreadB implements Runnable{
     @Override

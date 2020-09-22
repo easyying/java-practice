@@ -1,4 +1,4 @@
-package javaPractice.thread.lock;
+package javaPractice.thread.syn;
 
 /**
  * 测试有syn和没syn的线程安全性

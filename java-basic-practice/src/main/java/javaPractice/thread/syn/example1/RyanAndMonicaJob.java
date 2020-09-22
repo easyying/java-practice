@@ -1,4 +1,4 @@
-package javaPractice.thread.lock.example1;
+package javaPractice.thread.syn.example1;
 
 public class RyanAndMonicaJob implements Runnable {
 

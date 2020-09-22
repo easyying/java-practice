@@ -11,4 +11,17 @@ public class Value {
     public synchronized int getValue(){
         return value;
     }
+
+    public static void me(){
+        //this.oo();
+        oo();
+    }
+
+    public static void oo(){
+        Value v = new Value();
+        v.getValue();
+    }
+
+
+
 }

@@ -1,5 +1,8 @@
 package javaPractice.thread.consumer_provider.exapmles2;
 
+/**
+ * 投递呀
+ */
 public class Test {
     public static void main(String[] args) {
         NumberSyn syn = new NumberSyn();

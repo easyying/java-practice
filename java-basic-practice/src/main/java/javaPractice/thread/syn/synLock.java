@@ -1,4 +1,4 @@
-package javaPractice.thread.lock;
+package javaPractice.thread.syn;
 
 /**
  * 一.  隐式锁写法：
